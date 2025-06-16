@@ -16,7 +16,7 @@ export default function Services() {
         heading="Services"
         text="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
       />
-      <main className="min-h-screen w-[80%] text-gree mx-auto  p-10 grid grid-cols-1 sm:grid-cols-2  gap-6">
+      <main className="min-h-screen w-[80%] mx-auto  pb-10 grid grid-cols-1 sm:grid-cols-2  gap-6">
         <ServiceCard
           title="Search engine optimization"
           bgColor="white"

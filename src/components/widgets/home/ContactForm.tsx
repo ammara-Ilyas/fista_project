@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -24,72 +25,98 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    // You can now send this data to an API or backend
   };
 
   return (
-    <section className="bg-gray-50 p-8 rounded-xl shadow-md flex flex-col lg:flex-row items-center justify-between gap-8">
+    // <section className="bg-gray-50 py-12  border-green-700">
+    <div className=" mx-auto  flex flex-col lg:flex-row bg-[#F3F3F3] items-center justify-between gap-12 w-[80%]  py-8 rounded-xl ">
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg flex flex-col gap-4"
+        className="w-[400px] justify-center ml-16 gap-2 py-2  lg:w-[450px] flex flex-col h-full "
       >
         {/* Radio Group */}
-        <div className="flex items-center gap-4">
-          <label className="flex items-center gap-1 text-sm font-medium text-gray-700">
+        <div className="flex items-center mx-5 gap-4">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
             <input
               type="radio"
               name="type"
               value="Say Hi"
               checked={formData.type === "Say Hi"}
               onChange={handleRadioChange}
-              className="text-lime-500 focus:ring-lime-400"
+              className="w-5 h-5 border-none accent-customColor"
             />
             Say Hi
           </label>
-          <label className="flex items-center gap-1 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
             <input
               type="radio"
               name="type"
               value="Get a Quote"
               checked={formData.type === "Get a Quote"}
               onChange={handleRadioChange}
-              className="text-lime-500 focus:ring-lime-400"
+              className="w-5 h-5 border-none accent-customColor"
             />
             Get a Quote
           </label>
         </div>
 
         {/* Inputs */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="p-3 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-lime-400"
-        />
+        <div className="flex flex-col gap-1  m-2">
+          <label
+            htmlFor="name"
+            className="flex items-center ml-1 gap-2 text-sm font-medium text-gray-700"
+          >
+            Name
+          </label>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="p-3 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-lime-400"
-        />
-
-        <textarea
-          name="message"
-          placeholder="Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={4}
-          className="p-3 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-lime-400"
-        />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="p-3 border border-black rounded-md bg-white focus:outline-none  focus:ring-none"
+          />
+        </div>
+        <div className="flex flex-col gap-1  m-2">
+          <label
+            htmlFor="email"
+            className="flex items-center ml-1 gap-2 text-sm font-medium text-gray-700"
+          >
+            Email*
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="p-3 border border-black rounded-md bg-white focus:outline-none  focus:ring-none"
+          />
+        </div>
+        <div className="flex flex-col gap-1  m-2">
+          <label
+            htmlFor="message"
+            className="flex items-center ml-1 gap-2 text-sm font-medium text-gray-700"
+          >
+            Message*
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={4}
+            className="p-3 border border-black rounded-md bg-white focus:outline-none  focus:ring-none"
+          />
+        </div>
 
         <button
           type="submit"
@@ -99,12 +126,18 @@ export default function ContactForm() {
         </button>
       </form>
 
-      {/* Right Side Illustration (Optional - Example Only) */}
-      <div className="hidden lg:flex flex-col items-center justify-center w-1/2 relative">
-        <div className="absolute w-40 h-40 border rotate-[20deg] border-black rounded-full" />
-        <div className="w-12 h-12 bg-black rotate-45 z-10" />
-        <div className="w-10 h-10 bg-lime-400 rotate-45 mt-6" />
+      {/* Image */}
+      <div className="relative w-[400px] h-[400px] lg:w-[280px] lg:h-[450px]">
+        <Image
+          src="/images/home/Illustration.png"
+          alt="contact_form"
+          layout="fill"
+          fill
+          objectFit="contain"
+          className=""
+          priority
+        />
       </div>
-    </section>
+    </div>
   );
 }

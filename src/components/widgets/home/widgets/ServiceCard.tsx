@@ -22,7 +22,7 @@ const bgClasses = {
 const ServiceCard: FC<ServiceCardProps> = ({ title, bgColor, bgText, img }) => {
   return (
     <div
-      className={`rounded-[45px] h-[210px]  border flex justify-around items-center px-6 py-4 shadow-md transition-transform hover:scale-105 ${bgClasses[bgColor]}`}
+      className={`rounded-[45px] h-[210px]  border flex justify-around items-center px-6 p-4 shadow-md transition-transform hover:scale-105 ${bgClasses[bgColor]}`}
     >
       <div className=" h-[80%] flex flex-col justify-between">
         <div className="mb-6">

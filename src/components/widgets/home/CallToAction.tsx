@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function CallToAction() {
   return (
-    <section className="bg-white px-6 md:px-12 w-[80%] mx-auto rounded-3xl shadow-md flex flex-col md:flex-row justify-between items-center gap-8 border-2 border-blue-500">
+    <section className="bg-gray-50 px-6 md:px-12 w-[80%] mx-auto rounded-3xl  flex flex-col md:flex-row justify-between items-center gap-8 ">
       {/* Text Section */}
       <div className="max-w-md text-center md:text-left">
         <h2 className="text-2xl font-semibold mb-2">
