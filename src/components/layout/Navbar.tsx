@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 export default function Navbar() {
   // const [nav, setNav] = useState(false);

@@ -1,12 +1,4 @@
 import ServiceCard from "./widgets/ServiceCard";
-import {
-  FaSearch,
-  FaMousePointer,
-  FaEnvelope,
-  FaChartLine,
-  FaFileAlt,
-} from "react-icons/fa";
-import { FaRobot } from "react-icons/fa6";
 import SectionHeading from "./widgets/Heading";
 
 export default function Services() {

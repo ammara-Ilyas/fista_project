@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { FC } from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
 import SectionHeading from "./widgets/Heading";
 import { FaLinkedinIn } from "react-icons/fa";
 
