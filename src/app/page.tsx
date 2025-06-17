@@ -19,7 +19,7 @@ const page = () => {
       <CaseStudies />
       <FAQAccordion />
       <TeamSection />
-      <TestimonialSlider />
+      {/* <TestimonialSlider /> */}
       <ContactForm />
     </>
   );
