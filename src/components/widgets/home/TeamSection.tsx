@@ -65,7 +65,7 @@ const TeamSection: FC = () => {
         heading="team"
         text="Meet the skilled and experienced team behind our successful digital marketing strategies"
       />
-      <div className="grid grid-cols-1 w-[80%] pb-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 w-[90%] sm:w-[80%] pb-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {teamMembers.map((member, index) => (
           <div
             key={index}

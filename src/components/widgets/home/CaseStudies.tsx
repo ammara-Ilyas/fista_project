@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import SectionHeading from "./widgets/Heading";
 
@@ -24,11 +23,11 @@ const CaseStudies = () => {
         heading="Case studies"
         text="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
       />
-      <div className="bg-[#111827] w-[80%] mx-auto rounded-2xl p-6 grid md:grid-cols-3 gap-6 text-white">
+      <div className="bg-white md:bg-[#111827] w-[90%] sm:w-[80%] md:w-[90%] lg:w-[80%] mx-auto rounded-2xl p-6 grid md:grid-cols-3 gap-6 text-white">
         {cases.map((item, index) => (
           <div
             key={index}
-            className="space-y-4 border-r last:border-r-0 pr-4 last:pr-0"
+            className="space-y-4 border rounded-2xl md:rounded-none p-6 md:p-0 mx-auto bg-[#111827] w-[90%] sm:w-[80%] md:border-l-0 md:border-t-0 md:border-b-0 md:border-r last:border-r-0 pr-4 last:pr-0"
           >
             <p className="text-sm">{item.text}</p>
             <div className="flex items-center gap-1 text-green-400 font-medium cursor-pointer hover:underline">

@@ -6,16 +6,16 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] mt-20 w-[90%] mx-auto rounded-t-[45px] text-white px-6 pt-10  md:px-14">
-      <div className=" flex flex-col gap-4">
+    <footer className="bg-[#1A1A1A] mt-20 w-[95%] lg:w-[90%] mx-auto rounded-t-[45px] text-white px-6 pt-10  md:px-14">
+      <div className=" flex flex-col gap-2 lg:gap-4">
         {/* Left Section */}
 
-        <div className="flex flex-row justify-between ">
-          <div className="w-48 h-[30px] relative">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between ">
+          <div className="w-48 h-[30px] mx-auto relative">
             <Image src="/images/home/footer_log.png" alt="footer logo" fill />
           </div>
 
-          <div className="hidden md:flex flex-row text-white items-center justify-center gap-4 text-sm">
+          <div className="flex flex-col md:flex-row  border-2 mt-5 md:mt-0 text-white items-center justify-center gap-4 text-sm">
             <Link href="#" className="underline">
               About us
             </Link>
@@ -32,22 +32,24 @@ export default function Footer() {
               Blog
             </Link>
           </div>
-          <div className="flex items-center gap-4 mt-2 md:mt-0">
-            <div className="flex gap-3  text-sm">
-              <a href="#" className=" p-2 rounded-full bg-white">
-                <FaLinkedinIn className="text-black" />
-              </a>
-              <a href="#" className=" p-2 rounded-full bg-white">
-                <FaFacebookF className="text-black" />
-              </a>
-              <a href="#" className=" p-2 rounded-full bg-white">
-                <FaTwitter className="text-black" />
-              </a>
+          <div className="md:block hidden ">
+            <div className="flex items-center gap-4 mt-2 md:mt-0">
+              <div className="flex gap-3  text-sm">
+                <a href="#" className=" p-2 rounded-full bg-white">
+                  <FaLinkedinIn className="text-black" />
+                </a>
+                <a href="#" className=" p-2 rounded-full bg-white">
+                  <FaFacebookF className="text-black" />
+                </a>
+                <a href="#" className=" p-2 rounded-full bg-white">
+                  <FaTwitter className="text-black" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className=" flex justify-between items-center ">
+        <div className=" flex flex-col my-5 md:my-0 sm:flex-row gap-5 justify-between items-center ">
           <div className="flex flex-col gap-2  items-start">
             <button className="bg-customColor  text-black font-semibold p-[2px] rounded-md">
               Contact us;
@@ -62,7 +64,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <form className="bg-[#2B2B2B] p-4 rounded-lg flex gap-4">
+          <form className="bg-[#2B2B2B] p-4 rounded-lg flex md:gap-2 lg:gap-4">
             <input
               type="email"
               placeholder="Email"
@@ -76,10 +78,25 @@ export default function Footer() {
             </button>
           </form>
         </div>
+        <div className="block md:hidden text-center ">
+          <div className="flex items-center justify-center gap-4 mt-2 md:mt-0">
+            <div className="flex gap-3  text-sm">
+              <a href="#" className=" p-2 rounded-full bg-white">
+                <FaLinkedinIn className="text-black" />
+              </a>
+              <a href="#" className=" p-2 rounded-full bg-white">
+                <FaFacebookF className="text-black" />
+              </a>
+              <a href="#" className=" p-2 rounded-full bg-white">
+                <FaTwitter className="text-black" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Bottom Footer */}
-      <div className="mt-6 border-t border-gray-700 py-7 text-sm flex flex-col md:flex-row gap-4 items-center">
+      <div className="mt-4 md:mt-6 border-t border-gray-700 py-4 md:py-7 text-sm flex flex-col md:flex-row gap-4 items-center">
         <p>© 2025 Positivus. All Rights Reserved.</p>
         <p className="underline ">Privacy Policy</p>
       </div>

@@ -1,17 +1,11 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { CiSearch } from "react-icons/ci";
-import { FiChevronDown } from "react-icons/fi";
-import { FaAngleRight } from "react-icons/fa";
 
 export default function Navbar() {
-  const [nav, setNav] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const pathname = usePathname();
+  // const [nav, setNav] = useState(false);
+  // const pathname = usePathname();
 
   const links = [
     {
@@ -20,7 +14,7 @@ export default function Navbar() {
     },
     {
       name: "services",
-      link: "/solution",
+      link: "/services",
     },
     {
       name: "use cases",

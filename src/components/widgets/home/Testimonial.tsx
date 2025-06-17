@@ -4,10 +4,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import TestimonialCard from "./widgets/TeastimonialCard";
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
-import { GrFormPreviousLink } from "react-icons/gr";
 import Image from "next/image";
-
-// Testimonials Data
+import useMediaQuery from "@/hooks/useMediaQuery";
 const testimonials = [
   {
     quote:
@@ -60,8 +58,10 @@ const CustomDot = ({ active, onClick }: CustomDotProps) => (
 );
 
 const TestimonialSlider = () => {
-  const carouselRef = useRef<any>(null);
+  const carouselRef = useRef<Carousel | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const isMobile = useMediaQuery("(max-width: 639px)");
 
   const responsive = {
     desktop: {
@@ -80,13 +80,13 @@ const TestimonialSlider = () => {
 
   const goToPrev = () => {
     if (carouselRef.current) {
-      carouselRef.current.previous();
+      carouselRef.current.previous(1);
     }
   };
 
   const goToNext = () => {
     if (carouselRef.current) {
-      carouselRef.current.next();
+      carouselRef.current.next(1);
     }
   };
 
@@ -98,11 +98,10 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="my-20 w-[85%] mx-auto px-4">
-      <div className="w-full mx-auto relative bg-[#0f0f1a]  rounded-[45px] py-5 px-6">
+    <div className="my-20 w-full sm:w-[85%] mx-auto px-4">
+      <div className="w-full mx-auto relative bg-[#0f0f1a] rounded-[45px] py-5 px-6">
         <Carousel
           {...({
-            // partialVisible: true,
             partialVisibilityGutter: 40,
           } as any)}
           ref={carouselRef}
@@ -114,24 +113,24 @@ const TestimonialSlider = () => {
           swipeable
           draggable
           responsive={responsive}
-          // partialVisbile={true}
-          centerMode={true}
+          centerMode={!isMobile} // ✅ disables centerMode on mobile
           slidesToSlide={1}
           itemClass="carousel-item-padding-10-px"
           afterChange={(nextSlideIndex) => setActiveIndex(nextSlideIndex)}
         >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-[#0f0f1a]  rounded-xl  h-full">
+            <div key={index} className="bg-[#0f0f1a] rounded-xl h-full">
               <TestimonialCard testimonial={testimonial} />
             </div>
           ))}
         </Carousel>
 
-        <div className="mt-6 flex   w-[45%] mx-auto justify-between px-5 items-center space-x-4">
+        {/* Controls */}
+        <div className="mt-6 flex w-[95%] sm:w-[75%] lg:w-[45%] mx-auto justify-between px-5 items-center space-x-4">
           {/* Left Arrow */}
           <button
             onClick={goToPrev}
-            className=" text-gray-200   p-2 rounded-full shadow-md"
+            className="text-gray-200 p-2 rounded-full shadow-md"
           >
             <IoMdArrowBack className="text-xl" />
           </button>
@@ -150,7 +149,7 @@ const TestimonialSlider = () => {
           {/* Right Arrow */}
           <button
             onClick={goToNext}
-            className=" text-gray-300 p-2 rounded-full shadow-md"
+            className="text-gray-300 p-2 rounded-full shadow-md"
           >
             <IoMdArrowForward className="text-xl" />
           </button>

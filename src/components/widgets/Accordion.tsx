@@ -1,43 +1,43 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import SectionHeading from "./home/widgets/Heading";
 
+const faqs = [
+  {
+    question: "Consultation",
+    answer:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    question: "Research and Strategy Development",
+    answer:
+      "We conduct thorough research and develop a marketing strategy tailored to your business needs and audience.",
+  },
+  {
+    question: "Implementation",
+    answer:
+      "We implement the marketing strategies across appropriate channels to meet your objectives.",
+  },
+  {
+    question: "Monitoring and Optimization",
+    answer:
+      "We continuously monitor performance and optimize the campaigns for best results.",
+  },
+  {
+    question: "Reporting and Communication",
+    answer:
+      "Regular reporting and open communication ensure you're always in the loop.",
+  },
+  {
+    question: "Continual Improvement",
+    answer:
+      "We refine and improve your marketing strategies based on data and results.",
+  },
+];
 export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0); // default open first item
-  const [faqs, setFaqs] = useState([
-    {
-      question: "Consultation",
-      answer:
-        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
-    },
-    {
-      question: "Research and Strategy Development",
-      answer:
-        "We conduct thorough research and develop a marketing strategy tailored to your business needs and audience.",
-    },
-    {
-      question: "Implementation",
-      answer:
-        "We implement the marketing strategies across appropriate channels to meet your objectives.",
-    },
-    {
-      question: "Monitoring and Optimization",
-      answer:
-        "We continuously monitor performance and optimize the campaigns for best results.",
-    },
-    {
-      question: "Reporting and Communication",
-      answer:
-        "Regular reporting and open communication ensure you're always in the loop.",
-    },
-    {
-      question: "Continual Improvement",
-      answer:
-        "We refine and improve your marketing strategies based on data and results.",
-    },
-  ]);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -50,7 +50,7 @@ export default function FAQAccordion() {
         heading="Our Working Process"
         text="Step-by-Step Guide to Achieving Your Business Goals"
       />
-      <div className="space-y-4 w-[80%] mx-auto">
+      <div className="space-y-4 w-[90%] sm:w-[80%] mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}

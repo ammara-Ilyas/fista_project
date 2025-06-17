@@ -13,13 +13,13 @@ const page = () => {
   return (
     <>
       <Hero />
-      <TestimonialSlider />
       <BrandLogos />
       <Services />
       <CallToAction />
       <CaseStudies />
       <FAQAccordion />
       <TeamSection />
+      <TestimonialSlider />
       <ContactForm />
     </>
   );

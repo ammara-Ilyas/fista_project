@@ -29,11 +29,11 @@ export default function ContactForm() {
 
   return (
     // <section className="bg-gray-50 py-12  border-green-700">
-    <div className=" mx-auto  flex flex-col lg:flex-row bg-[#F3F3F3] items-center justify-between gap-12 w-[80%]  py-8 rounded-xl ">
+    <div className=" mx-auto  flex flex-col md:flex-row bg-[#F3F3F3] items-center justify-between gap-12 w-[80%]  py-8 rounded-xl ">
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-[400px] justify-center ml-16 gap-2 py-2  lg:w-[450px] flex flex-col h-full "
+        className="justify-center mx-auto md:ml-16 gap-2 py-2 w-[70%] lg:w-[60%]  flex flex-col h-full "
       >
         {/* Radio Group */}
         <div className="flex items-center mx-5 gap-4">
@@ -127,7 +127,7 @@ export default function ContactForm() {
       </form>
 
       {/* Image */}
-      <div className="relative w-[400px] h-[400px] lg:w-[280px] lg:h-[450px]">
+      <div className="hidden md:block relative w-[400px] h-[400px] lg:w-[280px] lg:h-[450px]">
         <Image
           src="/images/home/Illustration.png"
           alt="contact_form"

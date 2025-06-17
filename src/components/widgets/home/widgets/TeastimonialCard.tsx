@@ -1,5 +1,4 @@
 // components/TestimonialCard.tsx
-import { FaQuoteLeft } from "react-icons/fa";
 
 export interface TestimonialType {
   quote: string;
@@ -15,7 +14,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
   return (
     <div className="flex flex-col  justify-center items-center text-white ">
       {/* Bordered Box */}
-      <div className="relative border border-customColor rounded-xl p-6 m-5">
+      <div className="relative py-10 border border-customColor rounded-xl p-6 mx-6 my-2">
         {/* Quote Icon inside */}
 
         {/* Text */}
@@ -26,7 +25,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
       </div>
 
       {/* Name and Title below border */}
-      <div className="mt-6 pl-2 border-2">
+      <div className="mt-6 pl-2 ">
         <p className="text-customColor font-semibold">{testimonial.name}</p>
         <p className="text-sm text-gray-400">{testimonial.title}</p>
       </div>
