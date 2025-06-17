@@ -101,9 +101,6 @@ const TestimonialSlider = () => {
     <div className="my-20 w-full sm:w-[85%] mx-auto px-4">
       <div className="w-full mx-auto relative bg-[#0f0f1a] rounded-[45px] py-5 px-6">
         <Carousel
-          {...({
-            partialVisibilityGutter: 40,
-          } as any)}
           ref={carouselRef}
           arrows={false}
           showDots={false}
